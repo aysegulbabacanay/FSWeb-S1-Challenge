@@ -255,9 +255,25 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
+function fenomenEkle(x,y,z,d,e,f) 
+{
+ let a = x.map(function(x)
+{
+return x
 }
+)
+let nesne = 
+{
+"number": y,
+"profile": z,
+"followers": d,
+"posts": e,
+"platform": f
+}
+a.push(nesne)
+return a 
+}
+console.log(fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022,"Instagram"))
 
 
 /* Görev 7:
@@ -268,10 +284,20 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
-}
+function enFenomenler(x)     
+{
+  let new2 = [];
+for ( let i = 0 ; i<x.length; i++)
+{
+  if (x[i].followers >100000000 )
+{
 
+new2.push(x[i].profile)
+}
+}
+ return new2
+}
+console.log (enFenomenler(fenomenler))
 
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
