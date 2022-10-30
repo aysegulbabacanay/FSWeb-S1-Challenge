@@ -146,17 +146,25 @@ const fenomenler = [
 /* Görev 1 (otomatik kontrol testi yapılmayacak):
 Aşağıdakileri konsolda gösterim (console.log) işlemi gerçekleştirerek, yukarıda verilen fenomenler dizisindeki verilere erişim alıştırması yapın:
 
-(işlev yazmanıza gerek yok) */
+(işlev yazmanıza gerek yok) */ 
 
 //(1) Dizideki ilk fenomen (0. dizin) profil (profile) adı
 
+ console.log(fenomenler[0].profile)
 
 //(2) Dizideki üçüncü fenomenin (2. dizin) takipçi (followers) sayısı
+
+ console.log(fenomenler[2].followers)
 
 
 /* Görev 2 (otomatik kontrol testi yapılmayacak):
 (işlev yazmanıza gerek yok)
 Fenomenler dizisinde bir yazım hatası var 😱 7. sıradaki fenomen 'Justin Bieber' ın soyismi 'Biber' olarak yanlış yazılmış. Bu sorunu düzeltin ve çalışmanızı kontrol etmek için console.log() yapın.
+
+   */
+
+fenomenler[6].profile = "Justin Bieber"
+console.log(fenomenler[6].profile)
 
 
 /*  Görev 3:
@@ -168,9 +176,14 @@ Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
 ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
 
-function indekseGoreFenomen(/*kod*/) {
-  /*kod*/
+function indekseGoreFenomen(x,y) 
+{
+let a = x[y].profile
+let b = y + ". indekste bulunan fenomen: "
+return b + a
+
 }
+console.log(indekseGoreFenomen(fenomenler,3))
 
 
 
@@ -182,9 +195,21 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
 
-function profilListesi(/*kod*/) {
-  /*kod*/
+function profilListesi(x) {
+let a = x.map(function(x)
+{
+return x
 }
+)
+for ( let i = 0 ; i < x.length ; i++)
+{
+let b = a[i].profile
+a[i] = b
+}
+ return a
+}
+
+console.log(profilListesi(fenomenler))
 
 
 
